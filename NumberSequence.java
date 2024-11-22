@@ -8,6 +8,7 @@ public class NumberSequence
 	private int difference = -10;
 	private String pattern = new String("");
 	private int userNextNum;
+	private String UserPattern = new String("");
 	
 	public static void main(String[] args)
 	{
@@ -43,17 +44,29 @@ public class NumberSequence
 		int numTries = 0;
 		System.out.print("\nWhats the next Number? ");
 		userNextNum = in.nextInt();
-		while(userNextNum != changeNum || numTries != 3)
+		while(userNextNum != changeNum && numTries != 3)
 		{
 			
 			System.out.print("Try again. " + userNextNum +" is not the next number. What's the next number?");
 			userNextNum = in.nextInt();
 			numTries++;
 		}
+		if (userNextNum == changeNum)
+			System.out.println("Correct");
+		System.out.print("What's the pattern, format you answer as \"add \" and then the number? ");
+		in.nextLine();
+		UserPattern = in.nextLine();
+		if (UserPattern.equalsIgnoreCase(pattern))
+		{
+			System.out.println("Correct it was add " + difference + ".");
+		}
+		else
+		{
+			System.out.println("Incorrect. It was add " + difference + ".");
+			System.out.print("\n\n\n");
 		
 		
-		
-		
+	}
 		
 	}
 	
